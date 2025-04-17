@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2025-03-17T20:49:22.628693" rpa="false" schemaversion="5">
+<suite id="s1" name="Frontend" source="C:\Projetos\Frontend\frontend.robot">
+<test id="s1-t1" name="Login com sucesso" line="10">
+<kw name="Abrir o site do Qa.Coders">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-17T20:49:23.091755" level="INFO">Opening browser 'chrome' to base url 'https://qualitys-hunters-front.qacoders.dev.br/login'.</msg>
+<arg>https://qualitys-hunters-front.qacoders.dev.br/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-17T20:49:23.090220" elapsed="7.538837"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-17T20:49:30.632623" elapsed="0.152848"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-17T20:49:35.786835" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-17T20:49:30.785471" elapsed="5.001364"/>
+</kw>
+<status status="PASS" start="2025-03-17T20:49:23.088702" elapsed="12.698133"/>
+</kw>
+<status status="PASS" start="2025-03-17T20:49:23.087701" elapsed="12.700156"/>
+</test>
+<status status="PASS" start="2025-03-17T20:49:22.632738" elapsed="13.157115"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Frontend">Frontend</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
