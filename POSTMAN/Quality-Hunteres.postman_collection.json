@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "acb9d52b-675c-45f6-9f9f-0f4e6c08e589",
+		"name": "Quality-Hunteres",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25652270",
+		"_collection_link": "https://solar-crescent-454581.postman.co/workspace/Treinamento-Avan%C3%A7ado-Postman~7e0b07c3-fcb1-44d0-8090-9cc49c7c5e3f/collection/25652270-acb9d52b-675c-45f6-9f9f-0f4e6c08e589?action=share&source=collection_link&creator=25652270"
+	},
+	"item": [
+		{
+			"name": "Token-Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"TokenAdmin\" , pm.response.json().token);\r",
+							"\r",
+							"pm.environment.set(\"TokenAdmin\" , pm.response.json().token);\r",
+							"\r",
+							"pm.collectionVariables.set(\"TokenAdmin\" , pm.response.json().token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzQ4ZjZiMTQyNzgxZWMwY2U0NWY1ZTgiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ1WHVqUDYvOVkvREJncFdERGQ0SEMubUl1YkliVFFGLkNtYm9Gd29lU3E2UC53OWkuaGwxNiIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVpbnRhLWZlaXJhLCAyOC8xMS8yMDI0LCAyMDowMzoxMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY3NDhmNmIxNDI3ODFlYzBjZTQ1ZjVlOSJ9XSwiX192IjowLCJpYXQiOjE3MzgxMDM3NjQsImV4cCI6MTczODE5MDE2NH0.hpFMyTXbRjzfwsSgo6lzNkWVaacBsWFDzdTB7nrV_FA\"",
+						"description": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzQ4ZjZiMTQyNzgxZWMwY2U0NWY1ZTgiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ1WHVqUDYvOVkvREJncFdERGQ0SEMubUl1YkliVFFGLkNtYm9Gd29lU3E2UC53OWkuaGwxNiIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVpbnRhLWZlaXJhLCAyOC8xMS8yMDI0LCAyMDowMzoxMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY3NDhmNmIxNDI3ODFlYzBjZTQ1ZjVlOSJ9XSwiX192IjowLCJpYXQiOjE3MzgxMDM3NjQsImV4cCI6MTczODE5MDE2NH0.hpFMyTXbRjzfwsSgo6lzNkWVaacBsWFDzdTB7nrV_FA\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mail\": \"sysadmin@qacoders.com\",\r\n    \"password\": \"1234@Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qualitys-hunters.qacoders.dev.br/api/login",
+					"protocol": "https",
+					"host": [
+						"qualitys-hunters",
+						"qacoders",
+						"dev",
+						"br"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar-Usuário",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzQ4ZjZiMTQyNzgxZWMwY2U0NWY1ZTgiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ1WHVqUDYvOVkvREJncFdERGQ0SEMubUl1YkliVFFGLkNtYm9Gd29lU3E2UC53OWkuaGwxNiIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVpbnRhLWZlaXJhLCAyOC8xMS8yMDI0LCAyMDowMzoxMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY3NDhmNmIxNDI3ODFlYzBjZTQ1ZjVlOSJ9XSwiX192IjowLCJpYXQiOjE3MzgyNzkzNDgsImV4cCI6MTczODM2NTc0OH0.djN2NwDYuu6ayR-pKgYYWBRY10tYstOgFhEKuMNnIwg\"",
+						"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzQ4ZjZiMTQyNzgxZWMwY2U0NWY1ZTgiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ1WHVqUDYvOVkvREJncFdERGQ0SEMubUl1YkliVFFGLkNtYm9Gd29lU3E2UC53OWkuaGwxNiIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVpbnRhLWZlaXJhLCAyOC8xMS8yMDI0LCAyMDowMzoxMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY3NDhmNmIxNDI3ODFlYzBjZTQ1ZjVlOSJ9XSwiX192IjowLCJpYXQiOjE3MzgyNzkzNDgsImV4cCI6MTczODM2NTc0OH0.djN2NwDYuu6ayR-pKgYYWBRY10tYstOgFhEKuMNnIwg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Sandra Oliveira Lima\",\r\n    \"mail\": \"sandra@test.com.br\",\r\n    \"accessProfile\": \"ADMIN\",\r\n    \"cpf\": \"71122233344\",\r\n    \"password\": \"1234@Test\",\r\n    \"confirmPassword\": \"1234@Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qualitys-hunters.qacoders.dev.br/api/user",
+					"protocol": "https",
+					"host": [
+						"qualitys-hunters",
+						"qacoders",
+						"dev",
+						"br"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar-Usuários",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzQ4ZjZiMTQyNzgxZWMwY2U0NWY1ZTgiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ1WHVqUDYvOVkvREJncFdERGQ0SEMubUl1YkliVFFGLkNtYm9Gd29lU3E2UC53OWkuaGwxNiIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVpbnRhLWZlaXJhLCAyOC8xMS8yMDI0LCAyMDowMzoxMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY3NDhmNmIxNDI3ODFlYzBjZTQ1ZjVlOSJ9XSwiX192IjowLCJpYXQiOjE3Mzg5NjY3ODEsImV4cCI6MTczOTA1MzE4MX0.E3R_oNRF1Q9gFzGqmItdbBDLccH4KEmSH712IeSf80s",
+						"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzQ4ZjZiMTQyNzgxZWMwY2U0NWY1ZTgiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ1WHVqUDYvOVkvREJncFdERGQ0SEMubUl1YkliVFFGLkNtYm9Gd29lU3E2UC53OWkuaGwxNiIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVpbnRhLWZlaXJhLCAyOC8xMS8yMDI0LCAyMDowMzoxMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY3NDhmNmIxNDI3ODFlYzBjZTQ1ZjVlOSJ9XSwiX192IjowLCJpYXQiOjE3Mzg5NjY3ODEsImV4cCI6MTczOTA1MzE4MX0.E3R_oNRF1Q9gFzGqmItdbBDLccH4KEmSH712IeSf80s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://qualitys-hunters.qacoders.dev.br/api/user",
+					"protocol": "https",
+					"host": [
+						"qualitys-hunters",
+						"qacoders",
+						"dev",
+						"br"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar-Usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzQ4ZjZiMTQyNzgxZWMwY2U0NWY1ZTgiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ1WHVqUDYvOVkvREJncFdERGQ0SEMubUl1YkliVFFGLkNtYm9Gd29lU3E2UC53OWkuaGwxNiIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVpbnRhLWZlaXJhLCAyOC8xMS8yMDI0LCAyMDowMzoxMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY3NDhmNmIxNDI3ODFlYzBjZTQ1ZjVlOSJ9XSwiX192IjowLCJpYXQiOjE3MzgxMDM3NjQsImV4cCI6MTczODE5MDE2NH0.hpFMyTXbRjzfwsSgo6lzNkWVaacBsWFDzdTB7nrV_FA",
+						"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzQ4ZjZiMTQyNzgxZWMwY2U0NWY1ZTgiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ1WHVqUDYvOVkvREJncFdERGQ0SEMubUl1YkliVFFGLkNtYm9Gd29lU3E2UC53OWkuaGwxNiIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoicXVpbnRhLWZlaXJhLCAyOC8xMS8yMDI0LCAyMDowMzoxMyBCUlQiLCJyZWdpc3RyYXRpb25OdW1iZXIiOiIwMSIsImNvbXBhbnlJZCI6IlFhLkNvZGVycyIsIl9pZCI6IjY3NDhmNmIxNDI3ODFlYzBjZTQ1ZjVlOSJ9XSwiX192IjowLCJpYXQiOjE3MzgxMDM3NjQsImV4cCI6MTczODE5MDE2NH0.hpFMyTXbRjzfwsSgo6lzNkWVaacBsWFDzdTB7nrV_FA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"msg\": \"Usuário deletado com sucesso!.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qualitys-hunters.qacoders.dev.br/api/user/67995efee270333a9a039020",
+					"protocol": "https",
+					"host": [
+						"qualitys-hunters",
+						"qacoders",
+						"dev",
+						"br"
+					],
+					"path": [
+						"api",
+						"user",
+						"67995efee270333a9a039020"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login com e-mail invalido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mail\": \"sysa@qacoders.com\",\r\n  \"password\": \"1234@Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login com senha inválida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mail\": \"sysadmin@qacoders.com\",\r\n    \"password\": \"1234@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login com e-mail em branco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mail\": \"\",\r\n  \"password\": \"1234@Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar um usuário",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk5NWVmZWUyNzAzMzNhOWEwMzkwMjAiLCJmdWxsTmFtZSI6IkNhbGViZSBTb2FyZXMiLCJtYWlsIjoiY2FsZWJlQHRlc3QuY29tLmJyIiwicGFzc3dvcmQiOiIkMmIkMTAkMGxkRmUyWWFZSjdZZEVlSEJ5MEtMZUdTQ3dqbVVNMnBZcEpQTFRvUG5kTmNiQWdsMUJmTXUiLCJhY2Nlc3NQcm9maWxlIjoiQURNSU4iLCJjcGYiOiI0MTEyMjIzMzM0NCIsInN0YXR1cyI6dHJ1ZSwiYXVkaXQiOlt7InJlZ2lzdGVyZWRCeSI6eyJ1c2VySWQiOiI2NzQ4ZjZiMTQyNzgxZWMwY2U0NWY1ZTgiLCJ1c2VyTG9naW4iOiJzeXNhZG1pbkBxYWNvZGVycy5jb20ifSwicmVnaXN0cmF0aW9uRGF0ZSI6InRlcsOnYS1mZWlyYSwgMjgvMDEvMjAyNSwgMTk6NDk6MzQgQlJUIiwicmVnaXN0cmF0aW9uTnVtYmVyIjoiUWFDb2RlcnMtMTIiLCJfaWQiOiI2Nzk5NWVmZWUyNzAzMzNhOWEwMzkwMjEifV0sIl9fdiI6MCwiaWF0IjoxNzM4MTkzOTIyLCJleHAiOjE3MzgyODAzMjJ9.xf1OmYr9x1rHKV-MGDiLfecCHJaeLaWw23BF0V18NfY",
+						"description": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk5NWVmZWUyNzAzMzNhOWEwMzkwMjAiLCJmdWxsTmFtZSI6IkNhbGViZSBTb2FyZXMiLCJtYWlsIjoiY2FsZWJlQHRlc3QuY29tLmJyIiwicGFzc3dvcmQiOiIkMmIkMTAkMGxkRmUyWWFZSjdZZEVlSEJ5MEtMZUdTQ3dqbVVNMnBZcEpQTFRvUG5kTmNiQWdsMUJmTXUiLCJhY2Nlc3NQcm9maWxlIjoiQURNSU4iLCJjcGYiOiI0MTEyMjIzMzM0NCIsInN0YXR1cyI6dHJ1ZSwiYXVkaXQiOlt7InJlZ2lzdGVyZWRCeSI6eyJ1c2VySWQiOiI2NzQ4ZjZiMTQyNzgxZWMwY2U0NWY1ZTgiLCJ1c2VyTG9naW4iOiJzeXNhZG1pbkBxYWNvZGVycy5jb20ifSwicmVnaXN0cmF0aW9uRGF0ZSI6InRlcsOnYS1mZWlyYSwgMjgvMDEvMjAyNSwgMTk6NDk6MzQgQlJUIiwicmVnaXN0cmF0aW9uTnVtYmVyIjoiUWFDb2RlcnMtMTIiLCJfaWQiOiI2Nzk5NWVmZWUyNzAzMzNhOWEwMzkwMjEifV0sIl9fdiI6MCwiaWF0IjoxNzM4MTkzOTIyLCJleHAiOjE3MzgyODAzMjJ9.xf1OmYr9x1rHKV-MGDiLfecCHJaeLaWw23BF0V18NfY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Calebe Soares Ramos\",\r\n    \"mail\": \"caebe@test.com.br\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/user/6799f47ae270333a9a0391d4",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"6799f47ae270333a9a0391d4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mail\": \"calebe@test.com.br\",\r\n  \"password\": \"1234@Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/login/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "TokenAdmin",
+			"value": ""
+		}
+	]
+}

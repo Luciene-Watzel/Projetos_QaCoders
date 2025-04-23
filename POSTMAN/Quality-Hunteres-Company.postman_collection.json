@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "1484f34a-2f9d-4ded-b226-0a8a3dc3ed59",
+		"name": "Quality-Hunteres-Company",
+		"description": "Coleção para apresentação dos metodos de Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25652270",
+		"_collection_link": "https://solar-crescent-454581.postman.co/workspace/Treinamento-Avan%C3%A7ado-Postman~7e0b07c3-fcb1-44d0-8090-9cc49c7c5e3f/collection/25652270-1484f34a-2f9d-4ded-b226-0a8a3dc3ed59?action=share&source=collection_link&creator=25652270"
+	},
+	"item": [
+		{
+			"name": "Criar-Empresa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"corporateName\": \"Mundo Azul Kids\",\r\n  \"registerCompany\": \"12126456000166\",\r\n  \"mail\": \"test@test.com\",\r\n  \"matriz\": \"Teste\",\r\n  \"responsibleContact\": \"Marcio\",\r\n  \"telephone\": \"99999999999999\",\r\n  \"serviceDescription\": \"Testes\",\r\n  \"address\": [\r\n    {\r\n      \"zipCode\": \"04777001\",\r\n      \"city\": \"São Paulo\",\r\n      \"state\": \"SP\",\r\n      \"district\": \"Rua das Flores\",\r\n      \"street\": \"Avenida Interlagos\",\r\n      \"number\": \"50\",\r\n      \"complement\": \"de 4503 ao fim - lado ímpar\",\r\n      \"country\": \"Brasil\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/company/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"company",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar-Empresa Nova",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"corporateName\": \"Mania de Criança\",\r\n  \"registerCompany\": \"12126456000177\",\r\n  \"mail\": \"test@test.com\",\r\n  \"matriz\": \"Teste\",\r\n  \"responsibleContact\": \"Marcio\",\r\n  \"telephone\": \"99999999999999\",\r\n  \"serviceDescription\": \"Testes\",\r\n  \"address\": [\r\n    {\r\n      \"zipCode\": \"04777001\",\r\n      \"city\": \"São Paulo\",\r\n      \"state\": \"SP\",\r\n      \"district\": \"Rua das Flores\",\r\n      \"street\": \"Avenida Interlagos\",\r\n      \"number\": \"50\",\r\n      \"complement\": \"de 4503 ao fim - lado ímpar\",\r\n      \"country\": \"Brasil\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/company/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"company",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validar-Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"tokenAdmin\", pm.response.json().token)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mail\": \"sysadmin@qacoders.com\",\r\n  \"password\": \"1234@Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/login/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar-Endereço-Empresa  com Sucesso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar mesnagem de sucesso\", function () {\r",
+							"    pm.expect(pm.response.json().msg).to.be.eql(\"Endereço da companhia atualizado com sucesso.\")\r",
+							"    })"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address\": [\r\n    {\r\n      \"zipCode\": \"04777163\",\r\n      \"city\": \"Rio de Jneiro\",\r\n      \"state\": \"RJ\",\r\n      \"district\": \"Rua das Margaridas\",\r\n      \"street\": \"Avenida Atlântica\",\r\n      \"number\": \"500\",\r\n      \"complement\": \"de 4503 ao fim - lado ímpar\",\r\n      \"country\": \"Brasil\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/company/address/67abd578c3aa39ace24220e7",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"company",
+						"address",
+						"67abd578c3aa39ace24220e7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar endereço da empresa com campo obrigatório em branco",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address\": [\r\n    {\r\n      \"zipCode\": \"\",\r\n      \"city\": \"Rio de Jneiro\",\r\n      \"state\": \"RJ\",\r\n      \"district\": \"Rua das Margaridas\",\r\n      \"street\": \"Avenida Atlântica\",\r\n      \"number\": \"500\",\r\n      \"complement\": \"de 4503 ao fim - lado ímpar\",\r\n      \"country\": \"Brasil\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/company/address/67abd578c3aa39ace24220e7",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"company",
+						"address",
+						"67abd578c3aa39ace24220e7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cadastro de Empresas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"companys\": \"Retorna uma lista de empresas.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/company/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"company",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contagem de Empresas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"count\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/company/count",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"company",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar uma empresa por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/company/67abd578c3aa39ace24220e9",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"company",
+						"67abd578c3aa39ace24220e9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Cadastro de uma Empresa por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"msg\": \"Companhia deletado com sucesso!.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/company/67ad3831c3aa39ace2422780",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"company",
+						"67ad3831c3aa39ace2422780"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Status de uma Empresa por ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/company/status/67ad3831c3aa39ace2422780",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"company",
+						"status",
+						"67ad3831c3aa39ace2422780"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
